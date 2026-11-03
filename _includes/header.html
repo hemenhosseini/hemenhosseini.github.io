@@ -1,0 +1,15 @@
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+    <nav class="nav">
+      {% for item in site.nav %}
+        {% assign active = false %}
+        {% if item.url == '/' and page.url == '/' %}{% assign active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}{% assign active = true %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} class="active"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

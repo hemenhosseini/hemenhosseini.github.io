@@ -1,0 +1,26 @@
+# ------------------------------------------------------------
+#  PUBLICATIONS
+#  Add one block per paper (newest first). Only title, authors,
+#  venue and year are required — the rest is optional.
+#  Your name in "authors" is shown in bold automatically.
+#
+#  type: journal | conference | preprint | thesis
+#  selected: true   → also shown on the home page
+# ------------------------------------------------------------
+#
+# Copy this template, remove the leading "# ", and fill it in:
+#
+# - title: "Title of the paper"
+#   authors: "A. Author, H. Hosseini, B. Author, G. Cerullo"
+#   venue: "Nano Letters"
+#   details: "21, 1666–1671"
+#   year: 2025
+#   type: journal
+#   doi: "10.1021/xxxxx"
+#   arxiv: "2501.01234"
+#   pdf: /assets/files/paper.pdf
+#   code: https://github.com/hemenhosseini/...
+#   note: "Cover article"
+#   selected: true
+
+[]

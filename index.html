@@ -1,14 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Hemen Hosseini</title>
-  </head>
-    <link rel="stylesheet" href="css/app.css">
-  <body class="container is-max-desktop">
-  
-  <h1 class="title has-text-danger">Hemen Hosseini</h1>
-    <h2>About me</h2>
-  <p>I am currently a Research Fellow at INF-CNR, Milan.</p>
-  
-  </body>
-</html>
+---
+layout: default
+title: About
+---
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker">{{ site.author.position }} · {{ site.author.affiliation }}</p>
+    <h1>{{ site.author.name }}</h1>
+    <p class="lede">
+      I am a physicist working on <strong>ultrafast spectroscopy</strong> — using femtosecond
+      light pulses, from the visible to the extreme ultraviolet, to watch how electrons,
+      excitons and spins move in quantum materials.
+    </p>
+    <p>
+      At <a href="https://www.elettra.eu">Elettra Sincrotrone Trieste</a> I work with the FERMI
+      seeded free-electron laser and the CITIUS high-harmonic source on XUV pump–probe experiments.
+      My background spans semiconductors, transition-metal dichalcogenides, halide perovskites and
+      van der Waals magnets, studied with transient absorption, time-resolved MOKE and
+      ultrafast holographic microscopy. I completed my PhD at Politecnico di Milano, a postdoc at
+      CNR-IFN in Milan, and the Master in High Performance Computing at SISSA — so I also write a
+      fair amount of scientific and instrument-control software.
+    </p>
+    {% include links.html %}
+  </div>
+  <div class="hero-side">
+    {% if site.show_photo %}
+      <img class="avatar" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="{{ site.author.name }}">
+    {% else %}
+      <div class="avatar avatar-initials" aria-hidden="true">HH</div>
+    {% endif %}
+    <ul class="facts">
+      <li><span>Based in</span>{{ site.author.location }}</li>
+      <li><span>Focus</span>Ultrafast & XUV spectroscopy</li>
+      <li><span>Materials</span>2D semiconductors, perovskites, vdW magnets</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block">
+  <h2>News</h2>
+  <ul class="news">
+    {% for n in site.data.news limit:6 %}
+      <li><time>{{ n.date }}</time><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% assign selected = site.data.publications | where: "selected", true %}
+{% if selected.size > 0 %}
+<section class="block">
+  <h2>Selected publications</h2>
+  <ul class="pubs">
+    {% for p in selected %}{% include publication.html pub=p %}{% endfor %}
+  </ul>
+  <p class="more"><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
+</section>
+{% endif %}
+
+<section class="block">
+  <h2>Recent articles</h2>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+      <li><time>{{ post.date | date: "%b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <p class="more"><a href="{{ '/articles/' | relative_url }}">All articles →</a></p>
+</section>
