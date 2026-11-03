@@ -3,11 +3,12 @@ layout: default
 title: About
 ---
 <section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-text">
     <p class="kicker">{{ site.author.position }} · {{ site.author.affiliation }}</p>
     <h1>{{ site.author.name }}</h1>
     <p class="lede">
-      I am a physicist working on <strong>ultrafast spectroscopy</strong> — using femtosecond
+      Physicist working on <strong>ultrafast spectroscopy</strong>, using femtosecond
       light pulses, from the visible to the extreme ultraviolet, to watch how electrons,
       excitons and spins move in quantum materials.
     </p>
@@ -17,53 +18,74 @@ title: About
       My background spans semiconductors, transition-metal dichalcogenides, halide perovskites and
       van der Waals magnets, studied with transient absorption, time-resolved MOKE and
       ultrafast holographic microscopy. I completed my PhD at Politecnico di Milano, a postdoc at
-      CNR-IFN in Milan, and the Master in High Performance Computing at SISSA — so I also write a
+      CNR-IFN in Milan, and the Master in High Performance Computing at SISSA, so I also write a
       fair amount of scientific and instrument-control software.
     </p>
     {% include links.html %}
   </div>
   <div class="hero-side">
+    <div class="avatar-ring">
     {% if site.show_photo %}
       <img class="avatar" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="{{ site.author.name }}">
     {% else %}
       <div class="avatar avatar-initials" aria-hidden="true">HH</div>
     {% endif %}
+    </div>
     <ul class="facts">
       <li><span>Based in</span>{{ site.author.location }}</li>
-      <li><span>Focus</span>Ultrafast & XUV spectroscopy</li>
+      <li><span>Focus</span>Ultrafast &amp; XUV spectroscopy</li>
       <li><span>Materials</span>2D semiconductors, perovskites, vdW magnets</li>
     </ul>
   </div>
 </section>
 
 <section class="block">
-  <h2>News</h2>
-  <ul class="news">
-    {% for n in site.data.news limit:6 %}
-      <li><time>{{ n.date }}</time><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
-    {% endfor %}
-  </ul>
+  <div class="block-head">
+    <h2>Research areas</h2>
+    <a class="more" href="{{ '/research/' | relative_url }}">Explore research →</a>
+  </div>
+  <div class="areas">
+    <a class="area" href="{{ '/research/#xuv' | relative_url }}"><span class="num">01</span><h3>XUV &amp; FEL spectroscopy</h3><p>Pump–probe experiments at FERMI and the CITIUS HHG source.</p></a>
+    <a class="area" href="{{ '/research/#magnetism' | relative_url }}"><span class="num">02</span><h3>Ultrafast magnetism</h3><p>Spin dynamics in NiPS₃, FePS₃, CoPS₃ with time-resolved MOKE.</p></a>
+    <a class="area" href="{{ '/research/#2d' | relative_url }}"><span class="num">03</span><h3>2D semiconductors &amp; perovskites</h3><p>Excitons and carriers in TMDs and halide perovskites.</p></a>
+    <a class="area" href="{{ '/research/#microscopy' | relative_url }}"><span class="num">04</span><h3>Wide-field ultrafast microscopy</h3><p>Transient holographic imaging over large fields of view.</p></a>
+  </div>
 </section>
 
 {% assign selected = site.data.publications | where: "selected", true %}
 {% if selected.size > 0 %}
 <section class="block">
-  <h2>Selected publications</h2>
+  <div class="block-head">
+    <h2>Selected publications</h2>
+    <a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a>
+  </div>
   <ul class="pubs">
     {% for p in selected %}{% include publication.html pub=p %}{% endfor %}
   </ul>
-  <p class="more"><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
 </section>
 {% endif %}
 
-<section class="block">
-  <h2>Recent articles</h2>
-  {% if site.posts.size > 0 %}
-  <ul class="post-list">
-    {% for post in site.posts limit:3 %}
-      <li><time>{{ post.date | date: "%b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  <p class="more"><a href="{{ '/articles/' | relative_url }}">All articles →</a></p>
-</section>
+<div class="split">
+  <section class="block">
+    <div class="block-head"><h2>News</h2></div>
+    <ul class="news">
+      {% for n in site.data.news limit:6 %}
+        <li><time>{{ n.date }}</time><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Recent articles</h2>
+      <a class="more" href="{{ '/articles/' | relative_url }}">All →</a>
+    </div>
+    {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts limit:3 %}
+        <li><time>{{ post.date | date: "%b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% else %}<p class="empty">Coming soon.</p>{% endif %}
+  </section>
+</div>
