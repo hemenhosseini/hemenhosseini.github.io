@@ -1,3 +1,61 @@
-remote_theme: pages-themes/minimal@v0.2.0
+# ------------------------------------------------------------
+#  Site settings — edit these to change your name, links, etc.
+# ------------------------------------------------------------
+title: Hemen Hosseini
+tagline: Physicist · Ultrafast spectroscopy & XUV science
+description: >-
+  Personal website of Hemen Hosseini, researcher at Elettra Sincrotrone Trieste
+  working on ultrafast spectroscopy, XUV/FEL science and van der Waals magnets.
+
+author:
+  name: Hemen Hosseini
+  position: Researcher
+  affiliation: Elettra Sincrotrone Trieste — FERMI free-electron laser
+  location: Trieste, Italy
+  email: hemenhosseini@gmail.com
+  # Leave a link empty ("") to hide its icon
+  github: hemenhosseini
+  linkedin: hemen-hosseini
+  scholar: ""        # e.g. "https://scholar.google.com/citations?user=XXXX"
+  orcid: ""          # e.g. "0000-0000-0000-0000"
+  researchgate: ""   # e.g. "Hemen-Hosseini"
+
+# Put a square photo at assets/img/profile.jpg and set this to true
+show_photo: false
+
+# Put your CV PDF at assets/files/cv.pdf and set this to true
+cv_pdf: false
+
+# This repo is served at https://hemenhosseini.github.io/hemen.hosseini/
+url: https://hemenhosseini.github.io
+baseurl: /hemen.hosseini
+
+# Navigation menu (order = order in the header)
+nav:
+  - title: About
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Projects
+    url: /projects/
+  - title: Articles
+    url: /articles/
+  - title: CV
+    url: /cv/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: /articles/:year/:title/
+timezone: Europe/Rome
+
 plugins:
-- jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - preview/
+  - node_modules/

@@ -1,0 +1,69 @@
+# ------------------------------------------------------------
+#  PROJECTS
+#  category: Research | Software | Instrumentation | Entrepreneurship
+#  Edit, reorder or delete freely. "links" and "tags" are optional.
+# ------------------------------------------------------------
+
+- title: CITIUS high-harmonic XUV source
+  category: Research
+  period: 2026 –
+  summary: >-
+    Development and characterisation of the CITIUS high-harmonic-generation
+    source at FERMI, driven by an amplified Ti:sapphire laser (800 nm, ~35 fs),
+    for table-top XUV pump–probe spectroscopy complementary to the free-electron laser.
+  tags: [HHG, XUV, Ti:sapphire, pump–probe]
+
+- title: Ultrafast magnetism in van der Waals antiferromagnets
+  category: Research
+  summary: >-
+    Time-resolved magneto-optic Kerr effect (MOKE) spectroscopy of spin dynamics
+    in layered magnets such as NiPS₃, FePS₃ and CoPS₃.
+  tags: [MOKE, spin dynamics, 2D magnets]
+
+- title: Ultrafast transient holographic microscopy
+  category: Instrumentation
+  period: Politecnico di Milano
+  summary: >-
+    Implemented a wide-field femtosecond transient holographic microscope with
+    G. Cerullo and F. Camargo, and used it to image the ultrafast response of
+    gold-nanorod arrays.
+  tags: [Holography, Pump–probe microscopy, Plasmonics]
+
+- title: XUV propagation in nanoscale hollow-core waveguides
+  category: Research
+  summary: >-
+    Numerical (Lumerical) study of transmission and absorption of XUV and soft
+    X-ray light through nanoscale hollow-core waveguides.
+  tags: [Simulation, FDTD, Soft X-rays]
+
+- title: Tango control interface for a powder-XRD furnace
+  category: Software
+  period: Elettra
+  summary: >-
+    Tango-based control system and user interface for a high-temperature
+    furnace used in powder X-ray diffraction experiments.
+  tags: [Tango, Python, Instrument control]
+
+- title: OCT reference-arm control GUI
+  category: Software
+  summary: >-
+    MATLAB graphical interface for driving and synchronising the reference arm
+    of an optical coherence tomography setup.
+  tags: [MATLAB, OCT, GUI]
+
+- title: Holographic image reconstruction
+  category: Software
+  summary: >-
+    Data-processing and image-reconstruction code for ultrafast holographic
+    transient microscopy data.
+  tags: [Python, Image processing]
+  links:
+    - label: GitHub
+      url: https://github.com/hemenhosseini/UTHM_image_reconstruction
+
+- title: Smart-building IoT platform
+  category: Entrepreneurship
+  summary: >-
+    Co-founded a smart-building start-up: designed the embedded hardware in
+    Altium, the website, and a cross-platform Android/iOS app written in Flutter.
+  tags: [IoT, Flutter, PCB design]

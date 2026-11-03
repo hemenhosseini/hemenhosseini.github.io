@@ -1,0 +1,29 @@
+# ------------------------------------------------------------
+#  CV — edit the entries below. Sections appear in this order.
+# ------------------------------------------------------------
+
+positions:
+  - period: 2026 –
+    title: Researcher
+    place: Elettra Sincrotrone Trieste — FERMI free-electron laser, Trieste
+  - period: ""
+    title: Postdoctoral researcher
+    place: CNR – Istituto di Fotonica e Nanotecnologie (IFN), Milan
+
+education:
+  - period: 2023
+    title: PhD in Physics
+    place: Politecnico di Milano
+  - period: ""
+    title: Master in High Performance Computing (MHPC)
+    place: SISSA, Trieste
+
+skills:
+  - group: Experimental
+    items: Ultrafast pump–probe & transient absorption, time-resolved MOKE, holographic microscopy, HHG / XUV sources, FEL experiments
+  - group: Materials
+    items: Semiconductors, TMDs (e.g. MoS₂), halide perovskites, van der Waals magnets (NiPS₃, FePS₃, CoPS₃), plasmonic nanostructures
+  - group: Computing
+    items: Python, C++ (OpenMP, MPI), CUDA, MATLAB, Lumerical, Tango controls
+  - group: Electronics
+    items: PCB design (Altium), microcontrollers, Flutter apps

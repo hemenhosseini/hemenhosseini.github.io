@@ -1,0 +1,14 @@
+---
+layout: page
+title: Projects
+subtitle: Experiments, instruments and software I have built or worked on.
+permalink: /projects/
+---
+{% assign cats = site.data.projects | map: "category" | uniq %}
+{% for c in cats %}
+  <h2>{{ c }}</h2>
+  <div class="cards">
+    {% assign items = site.data.projects | where: "category", c %}
+    {% for pr in items %}{% include project.html project=pr %}{% endfor %}
+  </div>
+{% endfor %}

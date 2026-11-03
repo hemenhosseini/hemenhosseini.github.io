@@ -1,0 +1,22 @@
+---
+layout: page
+title: Articles
+subtitle: Notes, explainers and essays on physics, instrumentation and computing.
+permalink: /articles/
+---
+{% if site.posts.size == 0 %}
+  <p class="empty">No articles yet.</p>
+{% else %}
+<ul class="article-list">
+  {% for post in site.posts %}
+  <li>
+    <time>{{ post.date | date: "%-d %b %Y" }}</time>
+    <div>
+      <a class="article-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+<p class="more"><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
+{% endif %}

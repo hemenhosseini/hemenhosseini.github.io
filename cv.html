@@ -1,0 +1,29 @@
+---
+layout: page
+title: Curriculum Vitae
+permalink: /cv/
+---
+{% if site.cv_pdf %}
+<p><a class="button" href="{{ '/assets/files/cv.pdf' | relative_url }}">Download CV (PDF)</a></p>
+{% endif %}
+
+<h2>Positions</h2>
+<ul class="timeline">
+  {% for e in site.data.cv.positions %}
+  <li><time>{{ e.period }}</time><div><strong>{{ e.title }}</strong><br>{{ e.place }}</div></li>
+  {% endfor %}
+</ul>
+
+<h2>Education</h2>
+<ul class="timeline">
+  {% for e in site.data.cv.education %}
+  <li><time>{{ e.period }}</time><div><strong>{{ e.title }}</strong><br>{{ e.place }}</div></li>
+  {% endfor %}
+</ul>
+
+<h2>Skills</h2>
+<dl class="skills">
+  {% for s in site.data.cv.skills %}
+  <dt>{{ s.group }}</dt><dd>{{ s.items }}</dd>
+  {% endfor %}
+</dl>

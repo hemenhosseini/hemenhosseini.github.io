@@ -1,0 +1,31 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+---
+{% assign pubs = site.data.publications %}
+{% if site.author.scholar != "" %}
+<p>A full, up-to-date list is on <a href="{{ site.author.scholar }}">Google Scholar</a>.</p>
+{% endif %}
+
+{% if pubs.size == 0 %}
+  <p class="empty">The publication list is being prepared — check back soon.</p>
+{% else %}
+  {% assign groups = "journal:Journal articles|conference:Conference proceedings|preprint:Preprints|thesis:Theses" | split: "|" %}
+  {% for g in groups %}
+    {% assign key = g | split: ":" | first %}
+    {% assign label = g | split: ":" | last %}
+    {% assign items = pubs | where: "type", key %}
+    {% if items.size > 0 %}
+      <h2>{{ label }}</h2>
+      <ul class="pubs">
+        {% for p in items %}{% include publication.html pub=p %}{% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+  {% assign untyped = pubs | where_exp: "p", "p.type == nil" %}
+  {% if untyped.size > 0 %}
+    <h2>Other</h2>
+    <ul class="pubs">{% for p in untyped %}{% include publication.html pub=p %}{% endfor %}</ul>
+  {% endif %}
+{% endif %}
