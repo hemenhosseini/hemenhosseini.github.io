@@ -1,6 +1,6 @@
-# hemen.hosseini
+# hemenhosseini.github.io
 
-Source of my personal website: **https://hemenhosseini.github.io/hemen.hosseini/**
+Source of my personal website: **https://hemenhosseini.github.io/**
 
 Built with Jekyll and deployed automatically by GitHub Actions (`.github/workflows/jekyll-gh-pages.yml`)
 on every push to `main`. You can edit everything directly on github.com — no local setup needed.
