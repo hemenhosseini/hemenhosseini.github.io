@@ -26,9 +26,9 @@ show_photo: false
 # Put your CV PDF at assets/files/cv.pdf and set this to true
 cv_pdf: false
 
-# This repo is served at https://hemenhosseini.github.io/hemen.hosseini/
+# Served at https://hemenhosseini.github.io/ (repo: hemenhosseini.github.io)
 url: https://hemenhosseini.github.io
-baseurl: /hemen.hosseini
+baseurl: ""
 
 # Navigation menu (order = order in the header)
 nav:
