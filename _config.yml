@@ -21,7 +21,7 @@ author:
   researchgate: ""   # e.g. "Hemen-Hosseini"
 
 # Put a square photo at assets/img/profile.jpg and set this to true
-show_photo: false
+show_photo: true
 
 # Put your CV PDF at assets/files/cv.pdf and set this to true
 cv_pdf: false
